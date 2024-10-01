@@ -1,0 +1,921 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Bebas+Neue&family=Sofadi+One&display=swap');
+
+
+
+:root {
+    --Black: #151515;
+    --Maroon: #5D0E41;
+    --Maroon2: #A91D3A;
+    --Red: #C73659;
+    --Grey: #EEEEEE;
+    --white: #ffffff;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--Maroon);
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Grey);
+    width: 100%;
+    height: 6rem;
+}
+
+
+.container {
+    padding: 0 4rem;
+}
+
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+.navbar__logo img {
+    height: 4rem;
+    margin-right: 1.3rem;
+    border-radius: 60%;
+}
+
+
+.navbar__logo span {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--Maroon);
+    white-space: nowrap;
+}
+
+
+.navbar__list {
+    display: flex;
+    list-style: none;
+    gap: 2.4rem;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+.navbar__list a,
+.navbar-menu-mobile__list a {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    color: var(--Maroon);
+}
+
+
+.navbar__list a::after,
+.navbar-menu-mobile__list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.4s ease-in-out;
+}
+
+
+.navbar__list a:hover::after,
+.navbar-menu-mobile__list a:hover::after {
+    width: 100%;
+}
+
+
+
+.navbar__menu-toggle-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.navbar__menu-toggle-button i {
+    font-size: 1.5rem;
+}
+
+
+
+@media (max-width: 1210px) {
+
+    .navbar__logo img {
+        height: 3rem;
+    }
+
+    .navbar__logo span {
+        font-size: 1.2rem;
+    }    
+
+    .navbar__list {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 1110px) {
+    .container {
+        padding: 0 2rem 0 1rem;
+    }
+}
+
+
+@media (max-width: 926px) {
+
+    .navbar__list {
+        display: none;
+    } 
+
+    .navbar__menu-toggle-button {
+        display: flex;
+        color: var(--Maroon);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar__logo {
+        margin-right: 2rem;
+    }
+
+    .navbar__logo img {
+        height: 2.6rem;
+        margin-right: 1rem;
+    }
+
+    .navbar__logo span {
+        font-size: 1.1rem;
+        text-wrap: wrap;
+    } 
+}
+
+
+.navbar-menu-mobile {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    width: 100%;
+    background-color: var(--Grey);
+}
+
+
+.navbar-menu-mobile.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.navbar-menu-mobile__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+
+.navbar-menu-mobile__list a {
+    text-decoration: none;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.navbar-menu-mobile__list a:hover {
+    color: var(--Maroon);
+}
+
+
+
+.home-container {
+    background: url('../images/FondoRojo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 20rem 2rem;
+    height: auto;
+}
+
+
+.titulo {
+    font-size: 3.4rem;
+    font-family: "Rubik Doodle Shadow", system-ui;
+    color: var(--Grey);
+    text-align: center;
+}
+
+
+.parrafo {
+    font-size: 2.1rem;
+    text-align: center;
+    font-family: "Akaya Telivigala", system-ui;
+    color: var(--Grey);
+    max-width: 45%;
+}
+
+
+
+@media (max-width: 1745px) {
+    .parrafo {
+        max-width: 55%;
+    }
+}
+
+
+@media (max-width: 1458px) {
+    .parrafo {
+        max-width: 65%;
+    }
+}
+
+
+@media (max-width: 1273px) {
+    .titulo {
+        font-size: 2.9rem;
+    }
+
+    .parrafo {
+        font-size: 1.65rem;
+        max-width: 60%;
+    }
+}
+
+
+@media (max-width: 1120px) {
+    .titulo {
+        font-size: 2.8rem;
+    } 
+
+    .parrafo {
+        font-size: 1.63rem;
+    }
+}
+
+
+@media (max-width: 1026px) {
+    .titulo {
+        font-size: 2.57rem;
+    } 
+
+    .parrafo {
+        max-width: 70%;
+        font-size: 1.53rem;
+    }
+}
+
+
+
+
+@media (max-width: 786px) {
+    .parrafo {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .titulo {
+        font-size: 2.4rem;
+    }
+
+    .parrafo {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+.sobre-mi-container {
+    background-color: var(--Black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 10rem 2rem;
+    height: auto;   
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.sobre-mi-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.sobre-mi-container h1 {
+    font-family: "Rubik Doodle Shadow", system-ui;
+    font-size: 2.7rem;
+    color: var(--Grey);
+    max-width: 60%;
+    text-wrap: nowrap;
+}
+
+
+.sobre-mi-container p {
+    font-family: "Akaya Telivigala", system-ui;
+    color: var(--Grey);
+    font-size: 1.6rem;
+    text-align: center;
+    text-align: start;
+    max-width: 60%;
+}
+
+
+
+@media (max-width: 1026px) {
+
+    .sobre-mi-container h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .sobre-mi-container p {
+        font-size: 1.6rem;
+        max-width: 100%;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .sobre-mi-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .sobre-mi-container p {
+        font-size: 1.4rem;
+    }
+}
+
+
+.skills-container { 
+    background: url('../images/FondoRojo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 12rem 2rem;
+    height: auto;
+}
+
+
+.skills-container h1 {
+    font-family: "Rubik Doodle Shadow", system-ui;
+    font-size: 2.7rem;
+    color: var(--Grey);
+    max-width: 60%;
+    text-wrap: nowrap;
+}
+
+
+.skills-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    max-width: 75%;
+}
+
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+.skill-card {
+    opacity: 0;
+    background-color: var(--Black);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 0px rgba(0, 0, 0, 0.3);
+    width: 13rem;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+}
+
+
+.skill-card.visible {
+    animation: slideIn 0.8s ease-out forwards;
+    animation-delay: calc(var(--index) * 0.1s); 
+}
+
+
+.skill-card:hover {
+   transform: translateY(-10px) !important;
+    box-shadow: 
+        0 0 8px #ff0055,  
+        0 0 11px #ff55ff,   
+        0 0 22px #5500ff,   
+        0 0 2px #00ffff, 
+        0 0 1px #00ff00,  
+        0 0 1px #ffff00;
+}
+
+
+
+
+.skill-card svg.custom-icon-html {
+    width: 3rem;
+    height: 3rem;
+    fill: #E34F26;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-css {
+    width: 3rem;
+    height: 3rem;
+    fill: #1572B6;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-js {
+    width: 3rem;
+    height: 3rem;
+    fill: #F7DF1E;
+    filter: drop-shadow(0 0 1px var(--Grey)) drop-shadow(0 0 0 var(--Grey)) drop-shadow(0 0 11px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-react {
+    width: 3rem;
+    height: 3rem;
+    fill: #61DAFB;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-bootstrap {
+    width: 3rem;
+    height: 3rem;
+    fill: #7952B3;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-git {
+    width: 3rem;
+    height: 3rem;
+    fill: #F05032;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-csharp {
+    width: 3rem;
+    height: 3rem;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-aspnetcore {
+    width: 3rem;
+    height: 3rem;
+    fill: #512BD4;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+.skill-card svg.custom-icon-sqlserver {
+    width: 3rem;
+    height: 3rem;
+    fill: #512BD4;
+    filter: drop-shadow(0 0 2px var(--Grey)) drop-shadow(0 0 5px var(--Grey)) drop-shadow(0 0 10px var(--Grey));
+    transition: filter 0.3s;
+}
+
+
+
+.skill-card p {
+    font-size: 1.2rem;
+    color: var(--Grey);
+    font-family: "Outfit", sans-serif;
+    font-weight: 800;
+    margin-top: 0.9rem;
+}
+
+
+
+@media (max-width: 1826px) {
+    
+    .skills-cards-container {
+        max-width: 80%;
+    }
+}
+
+
+@media (max-width: 678px) {
+    
+    .skills-cards-container {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 382px) {
+    .skills-container h1 {
+        max-width: 100%;
+    }
+}
+
+
+
+.contacto-container {
+    background-color: var(--Black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem ;
+    padding: 11rem 2rem ;
+    height: auto;
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+
+.contacto-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contacto-container h1 {
+    font-family: "Rubik Doodle Shadow", system-ui;
+    font-size: 2.7rem;
+    color: var(--Grey);
+    max-width: 60%;
+    text-wrap: nowrap;
+}
+
+
+.contacto-container p {
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: "Akaya Telivigala", system-ui;
+    color: var(--Grey);
+    max-width: 45%;
+}
+
+
+.formulario {
+    background-color: var(--Grey);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2.5rem;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px var(--Grey);
+}
+
+
+.formulario input {
+    padding: 1.4rem;
+    border: none;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    outline-color: var(--Maroon);
+    outline: none;
+}
+
+
+.label {
+    margin: 2.3rem 0 0.8rem 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.formulario textarea {
+    resize: none;
+    padding: 2rem 2rem 2rem 1.5rem;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+
+.formulario button {
+    background-color: var(--Maroon);
+    color: var(--Grey);
+    margin: 2.6rem 0 1.2rem 0;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    width: 26%;
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+.formulario button:hover {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+
+
+@media (max-width: 1485px) {
+
+    .formulario button {
+        min-width: 50%;
+    }
+}
+
+
+
+@media (max-width: 1285px) {
+    
+    .formulario {
+        width: 60%;
+    }
+
+    .formulario button {
+        min-width: 50%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .contacto-container h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .contacto-container p {
+        max-width: 80%; 
+    }
+
+
+    .formulario {
+        width: 70%;
+    }
+
+    .formulario button {
+        min-width: 50%;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .formulario {
+        width: 80%;
+    }
+
+    .formulario button {
+        width: 40%;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .formulario {
+        width: 100%;
+    }  
+
+    .formulario button {
+        width: 60%;
+    }
+}
+
+
+
+@media (max-width: 488px) {
+
+    .contacto-container h1 {
+        max-width: 100%;
+        font-size: 2.2rem;
+    }
+
+
+    .formulario {
+        padding: 1.9rem;
+    }
+
+
+    .contacto-container p {
+        font-size: 1.5rem;
+        max-width: 80%; 
+    }
+}
+
+
+@media (max-width: 360px) {
+
+
+    .formulario {
+        padding: 0 1.4rem;
+    }
+
+
+    .contacto-container p {
+        max-width: 100%; 
+    }
+
+    .formulario input {
+        font-size: 1rem;
+    }
+
+
+    .formulario button {
+        min-width: 80%;
+    }
+}
+
+
+
+.footer-section-container {
+    background: url('../images/FondoRojo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 5rem 2rem 2rem 2rem;
+    height: auto;
+}
+
+
+.titulo2 {
+    font-size: 2rem;
+    font-family: "Rubik Doodle Shadow", system-ui;
+    color: var(--Grey);
+    text-align: center;
+}
+
+
+.parrafo2 {
+    font-size: 1.4rem;
+    text-align: center;
+    font-family: "Akaya Telivigala", system-ui;
+    color: var(--Grey);
+    max-width: 45%;
+}
+
+
+
+.iconos-container {
+    display: flex; 
+    gap: 1.3rem;
+}
+
+.iconos-container a {
+    width: 3.3rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+
+.iconos-container a:hover {
+    background-color: var(--Grey);
+    transition: all 0.2s ease-in
+}
+
+
+.iconos-container a:hover i {
+    color: var(--Black);
+    transition: all 0.2s ease-in
+}
+
+
+.iconos-container i {
+    color: var(--Grey);
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+    margin-top: 0.2rem;
+}
+
+
+
+.texto-final {
+    font-size: 1rem;
+    text-align: center;
+    font-family: "Kanit", system-ui;
+    color: var(--Grey);
+    max-width: 45%;
+}
+
+
+@media (max-width: 1120px) {
+    .parrafo2{
+        max-width: 70%;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .titulo2 {
+        font-size: 1.7rem;
+    }
+
+
+    .parrafo2 {
+        max-width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .texto-final {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 510px) {
+
+    .texto-final{
+        max-width: 70%;
+    }
+}
