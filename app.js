@@ -83,9 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 document.getElementById("formulario").addEventListener("submit", function(event) {
     event.preventDefault(); 
-}
+});
+
+
 
 
 
