@@ -1,4 +1,7 @@
 
+//por motivos de seguridad, el código del envio del formulario no se ha incluido
+
+
 document.addEventListener("DOMContentLoaded", () => {
     
     const toggleButton = document.querySelector(".navbar__menu-toggle-button");
