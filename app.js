@@ -1,5 +1,5 @@
 
-//por motivos de seguridad, el código del envio del formulario no se ha incluido
+//por motivos de seguridad, el código del envio del formulario no se ha incluido.
 
 
 document.addEventListener("DOMContentLoaded", () => {
